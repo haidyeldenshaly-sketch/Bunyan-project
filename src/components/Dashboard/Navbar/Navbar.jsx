@@ -3,11 +3,9 @@ import styles from "./Navbar.module.css";
 function Navbar({adminName ="Super Admin"}) {
   return (
     <nav
-      className={`${styles.nav} d-flex justify-content-between align-items-center shadow-sm`}
-    >
+      className={`${styles.nav} d-flex justify-content-between align-items-center shadow-sm`}>
       <div
-        className={`${styles.parentImg} d-flex align-items-center justify-content-center`}
-      >
+        className={`${styles.parentImg} d-flex align-items-center justify-content-center`}  >
         <img src={logo} alt="logo" />
       </div>
       <div className={`${styles.adminSection} d-flex align-items-center justify-content-center gap-3`}>

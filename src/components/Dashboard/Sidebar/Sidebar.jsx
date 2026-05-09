@@ -1,13 +1,14 @@
+import { NavLink } from "react-router-dom"
 import styles from"../Sidebar/Sidebar.module.css"
 
 
 
 function Sidebar(){
     const links =[
-        {icon:" fa-chart-column", title:"Status"},
-        {icon:"fa-users" , title:"Users Management"},
-        {icon:"fa-building" , title:"Projects Management"},
-        {icon:"fa-building" , title:"Developers Management"},
+        {icon:" fa-chart-column", title:"Status",path:"/"},
+        {icon:"fa-users" , title:"Users Management", path:"/users"},
+        {icon:"fa-building" , title:"Projects Management",path:"/projects"},
+        {icon:"fa-building" , title:"Developers Management", },
         {icon:"fa-globe" , title:"CMS"},
         {icon:"fa-message" , title:"Live Chat"}
     ]
@@ -17,10 +18,10 @@ return(
     <div className="fw-fw-semibold px-3 mb-4 fs-4">Dashboard</div>
     <nav>
          {links.map((item,index)=>(
-        <div className={`${styles.navItem} d-fex align-items-center gap-2 px-3 py-3`} key={index}>
+        <NavLink to={item.path} className={`${styles.navItem} d-flex align-items-center gap-2 px-3 py-3`} key={index}>
             <i className={`fa-solid ${item.icon} fs-3`}></i>
             <span className={styles.title}>{item.title}</span>
-        </div>
+        </NavLink>
         ))}
     </nav>
    </aside>
